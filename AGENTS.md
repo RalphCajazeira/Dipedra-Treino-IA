@@ -31,7 +31,7 @@ Nunca publique:
 - informações que o usuário tenha indicado como privadas;
 - conteúdo integral de conversas quando apenas o aprendizado consolidado for necessário.
 
-Quando uma informação útil contiver dado sensível, generalize, anonimizar ou omita o trecho sensível. Em caso de dúvida, não publique e registre a pendência na descrição do Pull Request.
+Quando uma informação útil contiver dado sensível, generalize, anonimize ou omita o trecho sensível. Em caso de dúvida, não publique e registre a pendência na descrição do Pull Request.
 
 ## 4. Estrutura esperada
 
@@ -60,23 +60,34 @@ Regras:
 
 1. Confirme o repositório e a branch padrão.
 2. Leia `AGENTS.md`, o `README.md` raiz e os arquivos da pasta do Projeto.
-3. Crie uma branch nova a partir da branch padrão atualizada.
-4. Use um nome claro, por exemplo:
+3. Verifique a permissão disponível no repositório.
+4. Crie uma branch nova a partir da branch padrão atualizada, no próprio repositório quando houver permissão de escrita ou em um fork quando não houver.
+5. Use um nome claro, por exemplo:
    - `docs/<projeto>-atualizacao-aaaa-mm-dd`
    - `docs/<projeto>-consolidar-aprendizados`
-5. Faça apenas alterações relacionadas ao objetivo informado.
-6. Atualize o `CHANGELOG.md` do Projeto.
-7. Revise diferenças, links, nomes e ausência de dados sensíveis.
-8. Crie um Pull Request para a branch padrão.
-9. Não faça merge e não habilite auto-merge.
-10. Informe ao usuário:
+6. Faça apenas alterações relacionadas ao objetivo informado.
+7. Atualize o `CHANGELOG.md` do Projeto.
+8. Revise diferenças, links, nomes e ausência de dados sensíveis.
+9. Crie um Pull Request para a branch padrão do repositório original.
+10. Não faça merge e não habilite auto-merge.
+11. Informe ao usuário:
     - número e link do PR;
+    - origem da branch, indicando se está no repositório original ou em fork;
     - arquivos criados, alterados e removidos;
     - resumo do que mudou;
     - pendências ou informações não publicadas por segurança;
     - instruções e fontes que deverão ser sincronizadas no Projeto do ChatGPT após a aprovação.
 
-## 6. Commits e Pull Requests
+## 6. Permissões, fork e limitações da ferramenta
+
+Um repositório público permite leitura, mas não concede automaticamente permissão para criar branches ou commits nele.
+
+- Se a conta conectada tiver permissão de escrita, crie a branch no próprio repositório e abra o PR normalmente.
+- Se não tiver permissão de escrita, use um fork e abra um PR do fork para `RalphCajazeira/Dipedra-Treino-IA`.
+- Se a ferramenta conectada não conseguir criar fork ou Pull Request entre repositórios, não alegue sucesso. Prepare os arquivos ou patch completo, explique a limitação e informe exatamente o que o usuário precisa executar para concluir o PR.
+- Nunca solicite ou publique credenciais para contornar falta de permissão.
+
+## 7. Commits e Pull Requests
 
 Commits devem ser pequenos e descritivos. Exemplos:
 
@@ -92,7 +103,7 @@ docs(<projeto>): atualizar instruções e fontes
 
 A descrição do PR deve seguir `.github/pull_request_template.md`.
 
-## 7. Critérios para editar, criar ou apagar
+## 8. Critérios para editar, criar ou apagar
 
 ### Editar
 
@@ -106,7 +117,7 @@ Crie um arquivo quando o conteúdo tiver finalidade própria, for extenso o sufi
 
 Apague somente quando o conteúdo estiver obsoleto, duplicado, incorreto ou expressamente substituído. Explique a remoção no `CHANGELOG.md` e no PR.
 
-## 8. Qualidade do conteúdo
+## 9. Qualidade do conteúdo
 
 O conteúdo consolidado deve:
 
@@ -118,7 +129,7 @@ O conteúdo consolidado deve:
 - evitar registrar detalhes passageiros sem valor de treinamento;
 - manter nomes de telas, campos e etapas exatamente como confirmados.
 
-## 9. Sincronização com o Projeto do ChatGPT
+## 10. Sincronização com o Projeto do ChatGPT
 
 Após o merge do PR, o agente deve orientar a sincronização do Projeto correspondente:
 
@@ -128,7 +139,7 @@ Após o merge do PR, o agente deve orientar a sincronização do Projeto corresp
 4. confirmar que nomes e versões coincidem com o repositório;
 5. não afirmar que a sincronização foi realizada sem confirmação da ferramenta ou da interface utilizada.
 
-## 10. Proibições
+## 11. Proibições
 
 O agente não deve:
 
@@ -138,4 +149,5 @@ O agente não deve:
 - publicar dados sensíveis;
 - apagar arquivos sem justificativa;
 - apresentar como oficial algo apenas inferido;
-- dizer que atualizou o Projeto do ChatGPT se apenas atualizou o GitHub.
+- dizer que atualizou o Projeto do ChatGPT se apenas atualizou o GitHub;
+- dizer que abriu um PR quando a ferramenta não confirmou a criação.
